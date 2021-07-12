@@ -1,1 +1,18 @@
+Setwd  (‘C:\Users\barbs computer\Documents\mydata)
+## x is the orginal matrix, y is x defined outside of the parent enviroment and j is the ais $$ empty where the inverse of x will be placed
+## script is storing the inverse of the matrix in the parent environment
+## defining j, x, y, and set in the global environment
+makeCacheMatrix <- function(x = matrix(sample (1:50, 7), 2,2) )
+  j <- NULL
+  set <- function(y){
+  x <<- y
+  j <<- NULL
+  }
+  get <- function() x
+  setInverse <- function(inverse) j <<- inverse
+  getInverse <- function() j 
+  list(set = set,  get = get, 
+  setInverse = setInverse, 
+  getInverse = getInverse)
+}
 
